@@ -1,5 +1,6 @@
 @import url("./normalize.css");
 
+/* 변수 */
 :root {
   --border-color: #c4c4c4;
   --active-color: #0074e9;
@@ -9,6 +10,7 @@
   --secondary-text-color: #555;
 }
 
+/* 기본 스타일 */
 body {
   font-family: "Noto Sans KR", sans-serif;
   height: 100vh;
@@ -37,6 +39,7 @@ h6 {
   border-width: 0;
 }
 
+/* flex를 사용한 방법 */
 /* flex박스 래퍼 */
 .flex-wrapper {
   width: 502px;
@@ -150,13 +153,108 @@ h6 {
 .buy-button::before {
   content: "";
   opacity: 0;
-  visibility: hidden;
   transition: all 0.1s 0.1s;
 }
 .buy-button:hover::before,
 .buy-button:focus::before {
   content: "구매하기";
-  visibility: visible;
   margin-right: 16px;
   opacity: 1;
+}
+
+/* float을 사용한 방법 */
+.float-container {
+  width: 502px;
+  margin: 50px auto;
+  display: flow-root;
+}
+
+.box {
+  position: relative;
+  width: 243px;
+  height: 310px;
+  border: 1px solid var(--border-color);
+  padding: 14px 23px;
+  float: left;
+  text-align: center;
+}
+.box:last-child {
+  margin-left: 16px;
+}
+.box:hover {
+  border: 1px solid var(--active-color);
+}
+.big {
+  width: 502px;
+  height: 310px;
+  padding: 20px 28px;
+  margin-bottom: 16px;
+}
+.main-item {
+  width: 222px;
+  margin-top: 55px;
+  float: left;
+  display: flow-root;
+}
+.main-text {
+  font-size: 24px;
+  color: var(--primary-text-color);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  margin-top: 13px;
+}
+.main-image {
+  float: left;
+}
+
+.sub-text {
+  font-size: 18px;
+  color: var(--secondary-text-color);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  margin-top: 10px;
+}
+
+.buying-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.focus-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  color: #fff;
+  display: none;
+}
+.focus-text img {
+  margin-left: 16px;
+}
+.buying-button:hover,
+.buying-button:focus {
+  width: 112px;
+  background: var(--active-color);
+  padding: 12px 18px 13px 20px;
+}
+.buying-button:hover > img,
+.buying-button:focus > img {
+  display: none;
+}
+.buying-button:hover .focus-text,
+.buying-button:focus .focus-text {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.box:has(.buying-button:hover, .buying-button:focus) {
+  border: 1px solid var(--active-color);
 }
