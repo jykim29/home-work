@@ -20,10 +20,7 @@ div {
 }
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   margin: 0;
 }
 
@@ -40,8 +37,8 @@ h6 {
 }
 
 /* flex를 사용한 방법 */
-/* flex박스 래퍼 */
-.flex-wrapper {
+/* flex 컨테이너 */
+.flex-container {
   width: 502px;
   display: flex;
   flex-flow: column nowrap;
@@ -50,9 +47,9 @@ h6 {
   padding: 50px 0;
 }
 
-/* 메인 상품 */
+/* top 컨테이너 */
 /* 메인 상품 박스 */
-.main-product-container {
+.top-container {
   position: relative;
   width: var(--primary-width);
   height: 310px;
@@ -63,19 +60,25 @@ h6 {
   align-items: center;
   text-align: center;
 }
-.main-product-container:hover,
-.main-product-container:focus {
+.top-container:hover,
+.top-container:focus {
   border: 1px solid var(--active-color);
 }
-.main-product-container:has(.buy-button:hover, .buy-button:focus) {
+.top-container:has(.buy-button:hover, .buy-button:focus) {
   border: 1px solid var(--active-color);
 }
-.main-product-container > * {
+.top-container > * {
   flex: 1;
 }
 
+/* bottom 컨테이너 */
+.bottom-container {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 16px;
+}
 /* 서브 상품 박스 */
-.sub-product-container {
+.bottom-container > div {
   position: relative;
   width: var(--secondary-width);
   height: 310px;
@@ -83,18 +86,12 @@ h6 {
   padding: 14px 23px;
   text-align: center;
 }
-.sub-product-container:hover,
-.sub-product-container:focus {
+.bottom-container > div:hover,
+.bottom-container > div:focus {
   border: 1px solid var(--active-color);
 }
-.sub-product-container:has(.buy-button:hover, .buy-button:focus) {
+.bottom-container > div:has(.buy-button:hover, .buy-button:focus) {
   border: 1px solid var(--active-color);
-}
-/* 서브 상품 래퍼 */
-.products-wrapper {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 16px;
 }
 
 /* 상품 제목 */
