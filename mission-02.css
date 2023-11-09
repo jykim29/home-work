@@ -1,0 +1,11 @@
+@import url("./reset.css");
+
+:root {
+  --grayscale-white: #fefefe;
+  --grayscale-gray: #616161;
+  --primary-blue: #24388d;
+}
+
+html {
+  font-size: 10px;
+}
