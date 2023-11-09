@@ -1,11 +1,64 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 @import url("./reset.css");
+@import url("./theme.css");
 
-:root {
-  --grayscale-white: #fefefe;
-  --grayscale-gray: #616161;
-  --primary-blue: #24388d;
-}
-
+/* 기본 스타일 */
 html {
   font-size: 10px;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.reset-box {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* 헤더 영역 */
+.header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 173px;
+  color: var(--primary-blue-1);
+  background: var(--grayscale-white);
+  backdrop-filter: blur(2px);
+}
+.gnb-menu-list {
+  display: flow-root;
+}
+.gnb-menu-list > li {
+  float: left;
+  font-size: 1.5rem;
+}
+.gnb-menu-list > li:nth-child(n + 2) {
+  margin-left: 8px;
+}
+.gnb-menu-item-login {
+  font-weight: 600;
+}
+.login {
+  background-image: url("../images/login-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
