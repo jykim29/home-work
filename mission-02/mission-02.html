@@ -10,15 +10,17 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <h1><img src="./images/logo.png" alt="이디야 커피" /></h1>
+        <h1>
+          <a href="#"><img src="./images/logo.png" alt="이디야 커피" /></a>
+        </h1>
         <nav class="gnb">
           <ul class="gnb-menu-list">
-            <li><a href="/">이디야 디자인</a></li>
-            <li class="gnb-menu-item-login"><a href="/">로그인</a></li>
-            <li><a href="/">회원가입</a></li>
-            <li><a href="/">이디야 음료</a></li>
-            <li><a href="/">이디야 뉴스</a></li>
-            <li><a href="/">매장찾기</a></li>
+            <li><a href="#">이디야 디자인</a></li>
+            <li class="gnb-menu-item-login"><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">이디야 음료</a></li>
+            <li><a href="#">이디야 뉴스</a></li>
+            <li><a href="#">매장찾기</a></li>
           </ul>
           <button class="side-menu-button"><img src="./images/menu-icon.svg" alt="메뉴 펼치기" /></button>
         </nav>
@@ -29,27 +31,43 @@
             <h2 class="login-title">로그인</h2>
             <p class="login-headline">Welcome, Ediya Coffee</p>
             <p class="login-sub-headline">이디야커피에 오신 것을 환영합니다.</p>
-            <fieldset class="reset-box">
-              <legend class="sr-only">로그인</legend>
-              <form class="login-form" action="/" method="get">
-                <input class="login-input user-email" type="email" id="userEmail" name="userEmail" placeholder="이메일" required />
-                <input class="login-input user-pwd" type="password" id="userPwd" name="userPwd" placeholder="패스워드" required minlength="6" />
-                <div class="remember">
-                  <input type="checkbox" name="rememberEmail" id="rememberEmail" hidden />
-                  <label id="checkboxIcon" for="rememberEmail"><img src="./images/un-check.svg" alt="" /><span>이메일 저장</span></label>
-                </div>
-                <div class="login-form-buttons">
-                  <button type="submit">
-                    <span>로그인</span>
-                    <img src="./images/arrow-right-active.svg" alt="" />
-                  </button>
-                  <button type="button">
-                    <span>회원가입</span>
-                    <img src="./images/arrow-right.svg" alt="" />
-                  </button>
-                </div>
-              </form>
-            </fieldset>
+
+            <form class="login-form" action="./mission-02.html" method="get">
+              <div class="input-container">
+                <input class="login-input" type="email" id="userEmail" name="userEmail" maxlength="20" required />
+                <label for="userEmail">이메일</label>
+                <span class="status-icon-container hidden">
+                  <img class="status-icon" src="./images/warning-icon.svg" alt="" />
+                </span>
+                <span class="error-msg"></span>
+              </div>
+
+              <div class="input-container">
+                <input class="login-input" type="password" id="userPwd" name="userPwd" maxlength="20" required />
+                <label for="userPwd">패스워드</label>
+                <span class="status-icon-container">
+                  <button class="eye-button hidden" type="button" aria-label="비밀번호 표시"><img src="./images/eye-icon.svg" alt="" /></button>
+                  <img class="status-icon" src="" alt="" />
+                </span>
+                <span class="error-msg"></span>
+              </div>
+
+              <div class="remember">
+                <input class="rememberEmail sr-only" type="checkbox" name="rememberEmail" id="rememberEmail" aria-label="이메일 저장" />
+                <label id="checkboxIcon" for="rememberEmail"><img src="./images/un-check.svg" alt="" /><span aria-hidden="true">이메일 저장</span></label>
+              </div>
+
+              <div class="login-form-actions">
+                <button class="button sign-in" type="submit" disabled="true">
+                  <span>로그인</span>
+                  <img src="./images/arrow-right-active.svg" alt="" />
+                </button>
+                <a href="#" class="button sign-up">
+                  <span>회원가입</span>
+                  <img src="./images/arrow-right.svg" alt="" />
+                </a>
+              </div>
+            </form>
           </section>
         </div>
       </main>
