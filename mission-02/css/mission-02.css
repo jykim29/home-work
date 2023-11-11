@@ -109,7 +109,7 @@ button {
 /* 로그인 영역 */
 .login-wrapper {
   height: calc(100vh - 50px);
-  min-height: 720px;
+  min-height: 650px;
   background-image: url("../images/login-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -265,7 +265,7 @@ button {
 
   /* 로그인 영역 */
   .login-wrapper {
-    min-height: 750px;
+    min-height: 720px;
   }
   .login {
     padding: 7rem 3.2rem 5rem;
