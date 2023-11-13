@@ -1,0 +1,356 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import url("./reset.css");
+@import url("./theme.css");
+
+/* 기본 스타일 */
+html {
+  font-size: 10px;
+}
+body {
+  min-width: 375px;
+  font-size: 1.6rem;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  padding: 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.reset-box {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* 컴포넌트 스타일 */
+.button {
+  position: relative;
+  height: 48px;
+  flex: 1;
+  border: 0;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.04rem;
+  padding: 0;
+}
+.button:focus {
+  outline: 3px solid #1da1f2;
+}
+.login-input {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid gray;
+  padding: 1.5rem 5.5rem 0.5rem 0.8rem;
+  color: var(--grayscale-white);
+  letter-spacing: -0.032rem;
+  transition: box-shadow 0.3s;
+}
+
+/* 래퍼 영역 */
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+/* 헤더 영역 */
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: var(--grayscale-white);
+}
+.header-inner {
+  width: clamp(600px, 90%, 1000px);
+  height: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10%;
+  margin: 0 auto;
+  color: var(--primary-blue-1);
+  backdrop-filter: blur(2px);
+}
+.navigation {
+  position: relative;
+}
+.navigation-list {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 8px;
+  font-size: 1.5rem;
+}
+.navigation-list li:first-child {
+  font-weight: 600;
+}
+
+.menu-open,
+.menu-close {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 0;
+  display: none;
+}
+/* 로그인 영역 */
+.login-wrapper {
+  height: calc(100vh - 50px);
+  min-height: 650px;
+  background-image: url("../images/login-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.login {
+  height: 100%;
+  padding: 8rem 1.5rem 10rem 1.5rem;
+  text-align: center;
+  color: var(--grayscale-white);
+}
+.login-title {
+  font-size: var(--designsystem--section-title);
+  font-weight: 300;
+  letter-spacing: -0.72px;
+  line-height: normal;
+}
+.login-headline {
+  font-size: var(--card-dialog-headline);
+  margin-top: 2.4rem;
+}
+.login-sub-headline {
+  font-size: var(--card-dialog-sub-headline);
+  margin-top: 0.9rem;
+}
+
+/* 로그인 폼 */
+.login-form {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  width: 540px;
+  margin: 8rem auto 0;
+  text-align: left;
+}
+.input-container {
+  position: relative;
+}
+.input-container + .input-container {
+  margin-top: 3rem;
+}
+.login-input:focus {
+  border-bottom: 2px solid var(--grayscale-white);
+  outline: 3px solid #1da1f2;
+}
+
+.login-input + label {
+  position: absolute;
+  top: 18px;
+  left: 8px;
+  transition: all 0.3s;
+  user-select: none;
+  pointer-events: none;
+}
+/* label 애니메이션 동작 */
+.login-input:focus + label,
+.login-input:not(:placeholder-shown) + label {
+  transform: translate(-8px, -18px);
+  font-size: 1.3rem;
+}
+/* 유효성 검사 아이콘 동작 */
+/* 경고 아이콘 표시 */
+.login-input:not(:placeholder-shown):invalid {
+  background: url("../images/svg/warning-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+}
+/* 체크(통과) 아이콘 표시 */
+.login-input:not(:placeholder-shown):valid {
+  background: url("../images/svg/check-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+}
+/* 경고가 떴을 때 오류 메세지 표시 */
+.login-input:not(:placeholder-shown):invalid ~ .error-msg {
+  visibility: visible;
+}
+/* 유효성 검사 에러 메세지 */
+.error-msg {
+  display: block;
+  height: 30px;
+  font-size: 1.2rem;
+  letter-spacing: -0.24px;
+  padding: 5px 8px;
+  visibility: hidden;
+}
+
+/* 비밀번호 표시/숨기기 동작 */
+/* 인풋에 포커스 있을 때 표시 */
+.login-input:focus ~ .toggle-password-view {
+  display: block;
+}
+/* 유효성 검사 아이콘 없을 때 초기 위치 */
+.toggle-password-view {
+  position: absolute;
+  top: 17px;
+  right: 11px;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  background-repeat: no-repeat;
+  display: none;
+}
+/* 비밀번호 숨기기 상태 */
+.toggle-password-view.is-hidden {
+  background: url("../images/svg/eye-icon.svg");
+}
+/* 비밀번호 표시하기 상태 */
+.toggle-password-view.is-show {
+  background: url("../images/svg/close-eye-icon.svg");
+}
+/* 유효성 검사 아이콘 생긴 후 위치 */
+.login-input:not(:placeholder-shown) ~ .toggle-password-view {
+  right: 40px;
+}
+
+/* 이메일 저장 체크박스 */
+.remember {
+  width: 100px;
+  margin-top: 1.4rem;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.remember span {
+  padding-left: 20px;
+}
+.rememberEmail:focus + label {
+  border-radius: 5px;
+  outline: 3px solid #1da1f2;
+}
+.rememberEmail + label {
+  display: block;
+  background: url("../images/svg/un-check.svg");
+  background-repeat: no-repeat;
+  user-select: none;
+  background-position: 0% 50%;
+}
+.rememberEmail:checked + label {
+  background: url("../images/svg/checked.svg");
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+}
+
+/* 폼 액션 버튼 */
+.login-form-actions {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2rem;
+  margin-top: 7rem;
+}
+.sign-in {
+  background: url("../images/svg/arrow-right-active.svg") no-repeat 93% 50%, var(--grayscale-white);
+  color: var(--primary-blue-1);
+}
+.sign-up {
+  border: 1px solid var(--grayscale-white);
+  background: url("../images/svg/arrow-right.svg") no-repeat 93% 50%, transparent;
+  color: var(--grayscale-white);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 이메일, 패스워드 둘다 invalid 또는 둘중 하나가 invalid 일 때 로그인 버튼 비활성화 */
+.input-container:nth-child(1):has(.login-input:invalid) + .input-container:nth-child(2):has(.login-input:invalid) ~ .login-form-actions > .sign-in,
+.input-container:nth-child(1):has(.login-input:valid) + .input-container:nth-child(2):has(.login-input:invalid) ~ .login-form-actions > .sign-in,
+.input-container:nth-child(1):has(.login-input:invalid) + .input-container:nth-child(2):has(.login-input:valid) ~ .login-form-actions > .sign-in {
+  color: #808080;
+  background: #d2d2d2;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  /* 헤더 영역 */
+  .header-inner {
+    width: auto;
+    justify-content: space-between;
+    margin: 0;
+    padding-left: 15px;
+  }
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    width: 100%;
+    height: 100vh;
+    background: var(--grayscale-dark-gray);
+    color: var(--grayscale-white);
+    transition: all 0.3s;
+  }
+  .navigation.is--active {
+    transform: none;
+  }
+  .navigation-list {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 100px;
+  }
+  .navigation-list li {
+    margin: 0 10px;
+    border-top: 1px solid var(--primary-blue-2);
+  }
+  .navigation-list a {
+    display: block;
+    padding: 12px 20px;
+    margin: 0 -10px;
+  }
+  .navigation-list a:hover {
+    background: var(--primary-blue-1);
+  }
+  .navigation .menu-close {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--grayscale-white);
+    font-size: 1.5em;
+  }
+  .menu-open {
+    display: block;
+  }
+
+  /* 로그인 영역 */
+  .login-wrapper {
+    min-height: 720px;
+  }
+  .login {
+    padding: 7rem 3.2rem 5rem;
+  }
+  .login-form {
+    width: 100%;
+  }
+  .login-form-actions {
+    flex-flow: column nowrap;
+    height: 110px;
+  }
+}

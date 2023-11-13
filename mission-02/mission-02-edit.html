@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이디야 - 로그인</title>
+    <link rel="stylesheet" href="./css/mission-02-edit.css" />
+    <script type="text/javascript" src="./js/mission-02-edit.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header-inner">
+          <h1>
+            <a href="#"><img src="./images/logo.png" alt="이디야 커피" /></a>
+          </h1>
+          <button class="menu-open">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.1739 30H32.8261C34.3913 30 34.3913 32 32.8261 32H17.1739C15.6087 32 15.6087 30 17.1739 30Z" fill="#616161" />
+              <path d="M17.1739 24H32.8261C34.3913 24 34.3913 26 32.8261 26H17.1739C15.6087 26 15.6087 24 17.1739 24Z" fill="#616161" />
+              <path d="M17.1739 18H32.8261C34.3913 18 34.3913 20 32.8261 20H17.1739C15.6087 20 15.6087 18 17.1739 18Z" fill="#616161" />
+            </svg>
+          </button>
+          <nav class="navigation">
+            <ul class="navigation-list">
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">회원가입</a></li>
+              <li><a href="#">이디야 음료</a></li>
+              <li><a href="#">이디야 뉴스</a></li>
+              <li><a href="#">매장찾기</a></li>
+            </ul>
+            <button class="menu-close"><span aria-hidden="true">✖</span></button>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div class="login-wrapper">
+          <section class="login">
+            <h2 class="login-title">로그인</h2>
+            <p class="login-headline">Welcome, Ediya Coffee</p>
+            <p class="login-sub-headline">이디야커피에 오신 것을 환영합니다.</p>
+
+            <form class="login-form" action="./mission-02-no-js.html" method="get">
+              <div class="input-container">
+                <input class="login-input" type="email" id="userEmail" name="userEmail" placeholder=" " maxlength="20" pattern="^[0-9a-zA-Z]+@[0-9a-zA-Z]+\.[a-z]{2,}$" required />
+                <label for="userEmail">이메일</label>
+                <span class="error-msg">이메일 입력 방법이 잘못되었습니다. (예: user@domain.io)</span>
+              </div>
+
+              <div class="input-container">
+                <input class="login-input" type="password" id="userPwd" name="userPwd" placeholder=" " pattern="(?=.*?[a-zA-Z])(?=.*?[0-9]).{6,}" maxlength="20" required />
+                <label for="userPwd">패스워드</label>
+                <button type="button" class="toggle-password-view is-hidden" aria-label="비밀번호 표시하기"></button>
+                <span class="error-msg">패스워드는 숫자, 영어 조합 6자 이상 입력해야 합니다.</span>
+              </div>
+
+              <div class="remember" aria-label="이메일 저장">
+                <input class="rememberEmail sr-only" type="checkbox" name="rememberEmail" id="rememberEmail" />
+                <label id="checkboxIcon" for="rememberEmail"><span aria-hidden="true">이메일 저장</span></label>
+              </div>
+
+              <div class="login-form-actions">
+                <button class="button sign-in" type="submit">
+                  <span>로그인</span>
+                </button>
+                <a href="#" class="button sign-up">
+                  <span>회원가입</span>
+                </a>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
