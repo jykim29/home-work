@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <title>셀렉트박스 컴포넌트</title>
+  </head>
+  <h1>셀렉트박스 컴포넌트</h1>
+  <body>
+    <div class="selectbox-container">
+      <select class="default-selectbox select-language" name="language">
+        <option value="korean">한국어</option>
+        <option value="english">English</option>
+      </select>
+
+      <div class="selectbox-container">
+        <button class="custom-selectbox select-language">한국어</button>
+        <ul class="option-list">
+          <li class="option-item">✔ 한국어</li>
+          <li class="option-item">English</li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const selectBox = document.querySelector(".custom-selectbox.select-language");
+      const optionList = document.querySelector(".option-list");
+      const korLangItem = document.querySelector(".option-item:nth-child(1)");
+      const engLangItem = document.querySelector(".option-item:nth-child(2)");
+
+      selectBox.addEventListener("click", () => {
+        if (optionList.classList.contains("is--active")) {
+          optionList.classList.remove("is--active");
+        } else {
+          optionList.classList.add("is--active");
+        }
+      });
+      korLangItem.addEventListener("click", () => {
+        korLangItem.innerText = "✔ 한국어";
+        engLangItem.innerText = "English";
+        selectBox.innerText = "한국어";
+        optionList.classList.remove("is--active");
+      });
+      engLangItem.addEventListener("click", () => {
+        engLangItem.innerText = "✔ English";
+        korLangItem.innerText = "한국어";
+        selectBox.innerText = "English";
+        optionList.classList.remove("is--active");
+      });
+    </script>
+  </body>
+</html>
