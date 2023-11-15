@@ -1,5 +1,6 @@
 .header {
   padding: 50px 12%;
+  background: var(--gradients-100, linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%));
 }
 
 .header-inner {
