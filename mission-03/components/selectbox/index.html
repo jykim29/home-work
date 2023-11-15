@@ -9,9 +9,9 @@
   <h1>셀렉트박스 컴포넌트</h1>
   <body>
     <div class="default-selectbox-container">
-      <select class="default-selectbox select-language" name="language">
-        <option value="korean">옵션1</option>
-        <option value="english">옵션2</option>
+      <select class="default-selectbox" name="language">
+        <option value="">옵션1</option>
+        <option value="">옵션2</option>
       </select>
     </div>
 
@@ -21,8 +21,8 @@
     <div class="custom-selectbox-container">
       <button class="custom-selectbox select-language">옵션1</button>
       <ul class="option-list">
-        <li id="first-item" class="option-item is--select">옵션1</li>
-        <li id="second-item" class="option-item">옵션2</li>
+        <li id="first-item" class="option-item is--select"><a href="#">옵션1</a></li>
+        <li id="second-item" class="option-item"><a href="#">옵션2</a></li>
       </ul>
     </div>
     <script type="text/javascript">
@@ -40,7 +40,7 @@
       const optionItemClickHandler = (e) => {
         const Item_1_Value = optionItems[0].innerText;
         const Item_2_Value = optionItems[1].innerText;
-        if (e.target.id === "first-item") {
+        if (e.target.parentElement.id === "first-item") {
           optionItems[0].classList.add("is--select");
           optionItems[1].classList.remove("is--select");
           selectBox.innerText = Item_1_Value;
@@ -54,7 +54,7 @@
 
       selectBox.addEventListener("click", selectBoxClickHandler);
       optionItems.forEach((item) => {
-        item.addEventListener("click", optionItemClickHandler);
+        item.querySelector("a").addEventListener("click", optionItemClickHandler);
       });
     </script>
   </body>

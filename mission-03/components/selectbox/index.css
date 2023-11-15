@@ -3,12 +3,15 @@
   position: relative;
   display: inline-block;
 }
+.default-selectbox,
+.custom-selectbox {
+  padding: 10px 34px;
+}
 
 /* 기본 셀렉트 박스 */
-.default-selectbox.select-language {
+.default-selectbox {
   position: relative;
-  width: 113px;
-  height: 40px;
+
   background: transparent;
   border: 1px solid var(--gray-500);
   border-radius: 2px;
@@ -40,17 +43,15 @@
 }
 
 /* 커스텀 셀렉트박스(js 사용) */
-.custom-selectbox.select-language {
+.custom-selectbox {
   position: relative;
-  width: 113px;
-  height: 40px;
   background: transparent;
   border: 1px solid var(--gray-500);
   border-radius: 2px;
   color: var(--gray-500);
   line-height: 1.2;
 }
-.custom-selectbox.select-language::before {
+.custom-selectbox::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -60,7 +61,7 @@
   background: url("../../images/svg/global.svg") no-repeat 8px 50%;
   pointer-events: none;
 }
-.custom-selectbox.select-language::after {
+.custom-selectbox::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -71,8 +72,6 @@
   pointer-events: none;
 }
 .option-list {
-  width: 120px;
-  height: 86px;
   overflow: hidden;
   border-radius: 12px;
   opacity: 0.96;
@@ -83,7 +82,7 @@
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 10px;
   position: absolute;
   top: -5px;
   left: 5px;
@@ -94,12 +93,20 @@
   user-select: none;
   padding: 5px;
 }
-.option-item:hover {
+.option-item a {
+  display: block;
+  padding: 3px;
+}
+.option-item a:hover {
   background-color: var(--gray-200);
 }
-
+.default-selectbox:focus,
+.custom-selectbox:focus {
+  border: 3px solid var(--green-500);
+  outline: none;
+}
 /* 선택 체크 표시 상태 */
-.option-item.is--select::before {
+.option-item.is--select a::before {
   content: "✔ ";
 }
 /* 커스텀 드롭다운 메뉴 상태 */
@@ -108,8 +115,8 @@
 }
 
 @media (max-width: 768px) {
-  .default-selectbox.select-language,
-  .custom-selectbox.select-language {
-    height: 30px;
+  .default-selectbox,
+  .custom-selectbox {
+    padding: 5px 34px;
   }
 }
