@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <title>헤더 컴포넌트</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <h1>
+          <a href="#">
+            <picture>
+              <source srcset="../../images/logo-mobile.png 1x, ../../images/logo-mobile@2x.png 2x, ../../images/logo-mobile@3x.png 3x, ../../images/logo-mobile@4x.png 4x" media="(max-width: 768px)" />
+              <source srcset="../../images/logo.png 1x, ../../images/logo@2x.png 2x, ../../images/logo@3x.png 3x, ../../images/logo@4x.png 4x" media="(min-width: 768px)" />
+              <img src="../../images/Logo.png" alt="넷플릭스" />
+            </picture>
+          </a>
+        </h1>
+        <div class="header-actions-container">
+          <a class="button login-button" href="#">로그인</a>
+          <div class="custom-selectbox-container">
+            <button class="custom-selectbox select-language">한국어</button>
+            <ul class="option-list">
+              <li id="first-item" class="option-item is--select"><a href="#">한국어</a></li>
+              <li id="second-item" class="option-item"><a href="#">English</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>

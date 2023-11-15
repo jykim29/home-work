@@ -1,0 +1,26 @@
+.header {
+  padding: 50px 12%;
+}
+
+.header-inner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-actions-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 24px 25px;
+  }
+  .header-actions-container {
+    column-gap: 16px;
+  }
+}
