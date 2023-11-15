@@ -1,15 +1,45 @@
-.selectbox-container {
+.default-selectbox-container,
+.custom-selectbox-container {
   position: relative;
+  display: inline-block;
 }
 
+/* 기본 셀렉트 박스 */
 .default-selectbox.select-language {
+  position: relative;
   width: 113px;
   height: 40px;
   background: transparent;
   border: 1px solid var(--gray-500);
   border-radius: 2px;
+  appearance: none;
+  color: var(--gray-500);
+  line-height: 1.2;
+  text-align: center;
+}
+.default-selectbox-container::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../../images/svg/global.svg") no-repeat 8px 50%;
+  pointer-events: none;
 }
 
+.default-selectbox-container::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../../images/svg/drop-down.svg") no-repeat 93% 50%;
+  pointer-events: none;
+}
+
+/* 커스텀 셀렉트박스(js 사용) */
 .custom-selectbox.select-language {
   position: relative;
   width: 113px;
@@ -28,7 +58,7 @@
   top: 0;
   left: 0;
   background: url("../../images/svg/global.svg") no-repeat 8px 50%;
-  z-index: -1;
+  pointer-events: none;
 }
 .custom-selectbox.select-language::after {
   position: absolute;
@@ -38,7 +68,7 @@
   top: 0;
   left: 0;
   background: url("../../images/svg/drop-down.svg") no-repeat 93% 50%;
-  z-index: -1;
+  pointer-events: none;
 }
 .option-list {
   width: 120px;
@@ -67,11 +97,18 @@
 .option-item:hover {
   background-color: var(--gray-200);
 }
+
+/* 선택 체크 표시 상태 */
+.option-item.is--select::before {
+  content: "✔ ";
+}
+/* 커스텀 드롭다운 메뉴 상태 */
 .is--active {
   display: flex;
 }
 
 @media (max-width: 768px) {
+  .default-selectbox.select-language,
   .custom-selectbox.select-language {
     height: 30px;
   }
