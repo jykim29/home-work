@@ -102,7 +102,7 @@
 }
 .default-selectbox:focus,
 .custom-selectbox:focus {
-  border: 3px solid var(--green-500);
+  box-shadow: 0 0 0 3px var(--green-500);
   outline: none;
 }
 /* 선택 체크 표시 상태 */
