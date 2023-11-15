@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <title>템플릿 컴포넌트</title>
+  </head>
+  <body>
+    <div class="bg-container">
+      <header class="header">
+        <div class="header-inner">
+          <h1 class="logo">
+            <a href="#">
+              <picture>
+                <source
+                  srcset="../../images/logo-mobile.png 1x, ../../images/logo-mobile@2x.png 2x, ../../images/logo-mobile@3x.png 3x, ../../images/logo-mobile@4x.png 4x"
+                  media="(max-width: 768px)" />
+                <source srcset="../../images/logo.png 1x, ../../images/logo@2x.png 2x, ../../images/logo@3x.png 3x, ../../images/logo@4x.png 4x" media="(min-width: 768px)" />
+                <img src="../../images/Logo.png" alt="넷플릭스" />
+              </picture>
+            </a>
+          </h1>
+          <div class="header-actions-container">
+            <a class="button login-button" href="#">로그인</a>
+            <div class="custom-selectbox-container">
+              <button class="custom-selectbox select-language">한국어</button>
+              <ul class="option-list">
+                <li id="first-item" class="option-item is--select"><a href="#">한국어</a></li>
+                <li id="second-item" class="option-item"><a href="#">English</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main></main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-contact">질문이 있으신가요? 문의 전화: <a href="tel:00-308-321-0058">00-308-321-0058</a></p>
+
+        <nav class="footer-navigation">
+          <ul class="footer-navigation-list">
+            <li><a href="#">자주 묻는 질문</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">계정</a></li>
+            <li><a href="#">미디어 센터</a></li>
+            <li><a href="#">투자 정보(IR)</a></li>
+            <li><a href="#">입사 정보</a></li>
+            <li><a href="#">Netflix 지원 디바이스</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">개인정보</a></li>
+            <li><a href="#">쿠키 설정</a></li>
+            <li><a href="#">회사 정보</a></li>
+            <li><a href="#">문의하기</a></li>
+            <li><a href="#">속도 테스트</a></li>
+            <li><a href="#">법적 고지</a></li>
+            <li><a href="#">Netflix 오리지널</a></li>
+          </ul>
+        </nav>
+
+        <div class="custom-selectbox-container">
+          <button class="custom-selectbox select-language">한국어</button>
+          <ul class="option-list">
+            <li id="first-item" class="option-item is--select"><a href="#">한국어</a></li>
+            <li id="second-item" class="option-item"><a href="#">English</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-information-container">
+          <p class="footer-information-headline">Netflix 대한민국</p>
+          <ul class="footer-information-list">
+            <li>넷플릭스서비시스코리아 유한회사</li>
+            <li>통신판매업신고번호: 제2018-서울종로-0426호</li>
+            <li>전화번호: <a href="tel:00-308-321-0161">00-308-321-0161(수신자부담)</a></li>
+            <li>대표: 레지널드 숀 톰프슨</li>
+            <li>이메일 주소: <a href="mailto:korea@netflix.com">korea@netflix.com</a></li>
+            <li>
+              주소:
+              <address>대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</address>
+            </li>
+            <li>사업자 등록번호: 165-87-00119</li>
+            <li>클라우드 호스팅: Amazon Web Services Inc.</li>
+            <li><a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=1658700119">공정거래위원회 웹사이트</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
