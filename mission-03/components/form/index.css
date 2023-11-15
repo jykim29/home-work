@@ -1,0 +1,21 @@
+@media (min-width: 768px) {
+  .form {
+    width: 750px;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  .form .submit-button {
+    margin-left: -2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: 245px;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .form .submit-button {
+    margin: 0 auto;
+  }
+}
