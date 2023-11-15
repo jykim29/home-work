@@ -38,7 +38,7 @@
   .input {
     width: clamp(245px, 72%, 300px);
     font-size: 1.4rem;
-    padding: 15px 50px 5px 20px;
+    padding: 10px 50px 10px 20px;
     border-radius: 30px;
     box-sizing: border-box;
   }
@@ -55,12 +55,13 @@
   /* 입력값이 유효하지 않은 경우 붉은 테두리 표현 */
   .input.is--invalid {
     border: 2px solid var(--red-500);
-    background: url("../../images/svg/warning-icon.svg") no-repeat 95% 50%;
+
+    background: url("../../images/svg/warning-icon.svg") no-repeat 95% 50%, var(--white);
   }
   /* 입력값이 유효한 경우 초록 테두리 표시 */
   .input.is--valid {
     border: 2px solid greenyellow;
-    background: url("../../images/svg/check-icon.svg") no-repeat 95% 50%;
+    background: url("../../images/svg/check-icon.svg") no-repeat 95% 50%, var(--white);
   }
   .error-msg {
     padding-top: 3px;
@@ -88,11 +89,11 @@
   /* 입력값이 유효하지 않은 경우 붉은 밑줄 표현 */
   .input.is--invalid {
     border-bottom: 2px solid var(--red-500);
-    background: url("../../images/svg/warning-icon.svg") no-repeat 95% 50%;
+    background: url("../../images/svg/warning-icon.svg") no-repeat 95% 50%, var(--white);
   }
   /* 입력값이 유효한 경우 초록 테두리 표시 */
   .input.is--valid {
     border-bottom: 2px solid greenyellow;
-    background: url("../../images/svg/check-icon.svg") no-repeat 95% 50%;
+    background: url("../../images/svg/check-icon.svg") no-repeat 95% 50%, var(--white);
   }
 }
