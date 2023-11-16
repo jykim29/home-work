@@ -13,10 +13,10 @@
   position: relative;
 
   background: transparent;
-  border: 1px solid var(--gray-500);
+  border: 1px solid var(--gray-500, #757575);
   border-radius: 2px;
   appearance: none;
-  color: var(--gray-500);
+  color: var(--gray-500, #757575);
   line-height: 1.2;
   text-align: center;
 }
@@ -46,9 +46,9 @@
 .custom-selectbox {
   position: relative;
   background: transparent;
-  border: 1px solid var(--gray-500);
+  border: 1px solid var(--gray-500, #757575);
   border-radius: 2px;
-  color: var(--gray-500);
+  color: var(--gray-500, #757575);
   line-height: 1.2;
 }
 .custom-selectbox::before {
@@ -75,7 +75,7 @@
   overflow: hidden;
   border-radius: 12px;
   opacity: 0.96;
-  background: var(--gray-100);
+  background: var(--gray-100, #e3e3e3);
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: -0.008px;
@@ -98,11 +98,11 @@
   padding: 3px;
 }
 .option-item a:hover {
-  background-color: var(--gray-200);
+  background-color: var(--gray-200, #c8c8c8);
 }
 .default-selectbox:focus,
 .custom-selectbox:focus {
-  box-shadow: 0 0 0 3px var(--green-500);
+  box-shadow: 0 0 0 3px var(--green-500, #757575);
   outline: none;
 }
 /* 선택 체크 표시 상태 */

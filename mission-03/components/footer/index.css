@@ -1,7 +1,7 @@
 .footer {
   padding: 50px 12%;
-  border-top: 4px solid var(--gray-800);
-  background-color: var(--black);
+  border-top: 4px solid var(--gray-800, #2f2f2f);
+  background-color: var(--black, #010101);
 }
 .footer-inner {
   display: flex;

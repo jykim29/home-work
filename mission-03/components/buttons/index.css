@@ -7,7 +7,7 @@
 
 .button {
   display: inline-block;
-  background-color: var(--red-500);
+  background-color: var(--red-500, #e50914);
   border: 0;
   color: var(--white);
   font-weight: 700;
@@ -15,7 +15,7 @@
 }
 .button:hover,
 .button:focus {
-  background-color: var(--red-600);
+  background-color: var(--red-600, #b70710);
 }
 .button:focus {
   box-shadow: 0 0 0 3px var(--green-400, #58e590);
@@ -23,7 +23,7 @@
   transition: none;
 }
 .button:disabled {
-  background-color: var(--gray-500);
+  background-color: var(--gray-500, #0071eb);
   cursor: not-allowed;
 }
 
