@@ -60,3 +60,9 @@ const inputHandler = (e) => {
 emailInput.addEventListener("focus", inputFocusHandler);
 emailInput.addEventListener("blur", inputBlurHandler);
 emailInput.addEventListener("input", inputHandler);
+
+/* 배포용 스크립트 */
+const form = document.querySelector(".form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
