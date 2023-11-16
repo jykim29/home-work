@@ -17,6 +17,9 @@
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: -0.01px;
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 10px;
 }
 .footer-navigation {
   width: 100%;

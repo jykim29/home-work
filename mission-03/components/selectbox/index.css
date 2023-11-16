@@ -58,8 +58,12 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: url("../../images/svg/global.svg") no-repeat 8px 50%;
   pointer-events: none;
+  /* background: url("../../images/svg/stack.svg#global") no-repeat 8px 50%; */
+  background-image: url("../../images/svg/global.svg");
+  background-repeat: no-repeat;
+  background-position: 8px 50%;
+  background-size: 16px;
 }
 .custom-selectbox::after {
   position: absolute;
@@ -68,8 +72,12 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: url("../../images/svg/drop-down.svg") no-repeat 93% 50%;
   pointer-events: none;
+  /* background: url("../../images/svg/drop-down.svg") no-repeat 93% 50%; */
+  background-image: url("../../images/svg/drop-down.svg");
+  background-repeat: no-repeat;
+  background-position: 93% 50%;
+  background-size: 16px;
 }
 .option-list {
   overflow: hidden;
