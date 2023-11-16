@@ -66,6 +66,7 @@
   .error-msg {
     padding-top: 3px;
     font-size: 1.2rem;
+    text-align: left;
   }
 }
 /* 데스크탑 */
