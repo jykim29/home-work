@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <title>인풋 컴포넌트</title>
+  </head>
+  <body>
+    <h1>인풋 컴포넌트</h1>
+    <br />
+    <br />
+
+    <div class="inputs-container">
+      <div class="input-container">
+        <input class="input" type="email" name="userEmail" id="userEmail" required />
+        <label class="label" for="userEmail">레이블</label>
+        <span class="error-msg">오류 메세지</span>
+      </div>
+    </div>
+    <script>
+      const emailInput = document.querySelector(".input");
+      const emailRegex = new RegExp("^[0-9a-zA-Z]+@[0-9a-zA-Z]+\\.[a-z]{2,}$");
+
+      emailInput.addEventListener("focus", (e) => {
+        e.target.classList.add("is--focus");
+      });
+      emailInput.addEventListener("blur", (e) => {
+        const { value } = e.target;
+        if (value.length > 0) return;
+        e.target.classList.remove("is--focus");
+      });
+      emailInput.addEventListener("input", (e) => {
+        const { value } = e.target;
+        const isValid = emailRegex.test(value);
+        if (value.length > 0) {
+          if (isValid) {
+            e.target.classList.add("is--valid");
+            e.target.classList.remove("is--invalid");
+          } else {
+            e.target.classList.remove("is--valid");
+            e.target.classList.add("is--invalid");
+          }
+        } else {
+          e.target.classList.remove("is--valid");
+          e.target.classList.remove("is--invalid");
+        }
+      });
+    </script>
+  </body>
+</html>

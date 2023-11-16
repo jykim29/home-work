@@ -1,0 +1,9 @@
+.bg-container {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), url("../../images/background-large.jpg") no-repeat 50% 50% / cover;
+}
+
+@media (max-width: 768px) {
+  .bg-container {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), url("../../images/background-small.jpg") no-repeat 50% 50% / cover;
+  }
+}

@@ -1,0 +1,67 @@
+.register-container {
+  color: var(--white);
+  padding: 57px 14% 230px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: 28px;
+}
+.register-title {
+  width: 518px;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03px;
+  text-align: center;
+}
+.register-description,
+.register-sub-description,
+.register-alert {
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.55);
+  font-weight: 700;
+  line-height: 1.5;
+}
+.register-description {
+  font-size: 2rem;
+  letter-spacing: -0.01px;
+}
+.register-sub-description {
+  width: 306px;
+  letter-spacing: -0.008px;
+  text-align: justify;
+}
+.register-alert {
+  letter-spacing: -0.008px;
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    color: var(--white);
+    padding: 68px 4.8% 100px;
+    row-gap: 24px;
+    text-align: center;
+  }
+  .register-title {
+    width: 100%;
+    font-size: 3.4rem;
+    word-break: keep-all;
+  }
+  .register-description {
+    width: 259px;
+    font-size: 1.8rem;
+    letter-spacing: -0.009px;
+  }
+  .register-sub-description {
+    width: 100%;
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: -0.007px;
+    text-align: center;
+    word-break: keep-all;
+  }
+  .register-alert {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: -0.006px;
+  }
+}
