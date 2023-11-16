@@ -1,7 +1,4 @@
 const selectBoxContainer = document.querySelectorAll(".custom-selectbox-container");
-// const selectBox = document.querySelector(".custom-selectbox.select-language");
-// const optionList = document.querySelector(".option-list");
-// const optionItems = document.querySelectorAll(".option-item");
 const emailInput = document.querySelector(".input");
 const emailRegex = new RegExp("^[0-9a-zA-Z]+@[0-9a-zA-Z]+\\.[a-z]{2,}$");
 
