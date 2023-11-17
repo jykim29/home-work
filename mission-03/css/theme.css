@@ -40,26 +40,26 @@
   --gray-900: #171717;
 
   /* Text-size styles */
-  --big-title-mobile: 30px;
-  --big-title-desktop: 60px;
-  --description-bold-mobile: 15px;
-  --description-mobile: 13px;
-  --text-x-small: 12px;
-  --text-small: 14px;
-  --text-normal: 16px;
-  --text-large: 18px;
-  --text-x-large: 20px;
-  --text-x-small-bold: 12px;
-  --text-small-bold: 14px;
-  --text-normal-bold: 16px;
-  --text-large-bold: 18px;
-  --text-x-large-bold: 20px;
-  --title-x-small: 22px;
-  --title-small: 24px;
-  --title-normal: 28px;
-  --title-large: 34px;
-  --title-x-large: 48px;
-  --title-2x-large: 60px;
+  --big-title-mobile: 3rem;
+  --big-title-desktop: 6rem;
+  --description-bold-mobile: 1.5rem;
+  --description-mobile: 1.3rem;
+  --text-x-small: 1.2rem;
+  --text-small: 1.4rem;
+  --text-normal: 1.6rem;
+  --text-large: 1.8rem;
+  --text-x-large: 2rem;
+  --text-x-small-bold: 1.2rem;
+  --text-small-bold: 1.4rem;
+  --text-normal-bold: 1.6rem;
+  --text-large-bold: 1.8rem;
+  --text-x-large-bold: 2rem;
+  --title-x-small: 2.2rem;
+  --title-small: 2.4rem;
+  --title-normal: 2.8rem;
+  --title-large: 3.4rem;
+  --title-x-large: 4.8rem;
+  --title-2x-large: 6rem;
 
   /* Effect styles */
   --text-shadow-paragraph: 0px 2px 6px rgba(0, 0, 0, 0.55);
