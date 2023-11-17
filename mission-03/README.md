@@ -65,36 +65,447 @@ mission-03
 - 먼저 각자 독립적으로 작동하는 컴포넌트들을 만들었습니다.
 - 설명
 
-  1. buttons : 버튼 컴포넌트
+  1.  **buttons : 버튼 컴포넌트**
 
-     <img src="./images/readme-images/component_buttons.png" width="500px">
+      <img src="./images/readme-images/component_buttons.png" width="500px">
 
-  2. logo : 로고 컴포넌트
+       <details>
+          <summary>HTML 코드</summary>
 
-     <img src="./images/readme-images/component_logo.png" width="500px">
+      ```html
+      <div>
+        <a class="button login-button" href="#">버튼</a>
+      </div>
 
-  3. inputs : 입력창 컴포넌트
+      <div>
+        <button class="button submit-button" type="submit"><span>버튼</span></button>
+      </div>
+      ```
 
-     <img src="./images/readme-images/component_inputs.png" width="500px">
+       </details>
+             <details>
+          <summary>CSS 코드</summary>
 
-  4. selectbox : 셀렉트박스(드롭다운 메뉴) 컴포넌트
+      ```css
+      .buttons-container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        row-gap: 30px;
+      }
 
-     <img src="./images/readme-images/component_selectbox.png" width="500px">
+      .button {
+        display: inline-block;
+        background-color: var(--red-500, #e50914);
+        border: 0;
+        color: var(--white, #fff);
+        font-weight: 700;
+        transition: all 0.3s;
+      }
+      .button:hover,
+      .button:focus {
+        background-color: var(--red-600, #b70710);
+      }
+      .button:focus {
+        box-shadow: 0 0 0 3px var(--green-400, #58e590);
+        outline: none;
+        transition: none;
+      }
+      .button:disabled {
+        background-color: var(--gray-500, #0071eb);
+        cursor: not-allowed;
+      }
+
+      @media (max-width: 768px) {
+        .login-button {
+          font-size: var(--text-x-small-bold, 1.2rem);
+          line-height: 1.5;
+          letter-spacing: -0.006px;
+          padding: 0.5em 1.083em;
+          border-radius: 4px;
+        }
+        .submit-button {
+          width: 160px;
+          height: 40px;
+          font-size: var(--text-small-bold, 1.4rem);
+          line-height: 1.5;
+          letter-spacing: -0.007px;
+          border-radius: 30px;
+          background-image: url("../../images/svg/arrow-stroke.svg");
+          background-repeat: no-repeat;
+          background-position: 87% 50%;
+          & span {
+            display: inline-block;
+            padding-right: 35px;
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        .login-button {
+          font-size: var(--text-normal-bold, 1.6rem);
+          line-height: 1.5;
+          letter-spacing: -0.008px;
+          padding: 0.5em 0.781em;
+          border-radius: 4px;
+        }
+        .submit-button {
+          width: 210px;
+          height: 60px;
+          font-size: var(--title-x-small, 2.2rem);
+          line-height: 1.2;
+          background-image: url("../../images/svg/arrow-stroke.svg");
+          background-repeat: no-repeat;
+          background-position: 87% 50%;
+          & span {
+            display: inline-block;
+            padding-right: 35px;
+          }
+        }
+      }
+      ```
+
+       </details>
+
+  2.  **logo : 로고 컴포넌트**
+
+      <img src="./images/readme-images/component_logo.png" width="500px">
+
+      <details>
+      <summary>HTML 코드</summary>
+
+      ```html
+      <h1 class="logo">
+        <a href="#">
+          <picture>
+            <source srcset="../../images/logo-mobile.png 1x, ../../images/logo-mobile@2x.png 2x, ../../images/logo-mobile@3x.png 3x, ../../images/logo-mobile@4x.png 4x" media="(max-width: 768px)" />
+            <source srcset="../../images/logo.png 1x, ../../images/logo@2x.png 2x, ../../images/logo@3x.png 3x, ../../images/logo@4x.png 4x" media="(min-width: 768px)" />
+            <img src="../../images/Logo.png" alt="넷플릭스" />
+          </picture>
+        </a>
+      </h1>
+      ```
+
+      </details>
+      <details>
+      <summary>CSS 코드</summary>
+
+      ```css
+      .logo > a {
+        display: inline-block;
+      }
+      ```
+
+       </details>
+
+  3.  **inputs : 입력창 컴포넌트**
+
+      <img src="./images/readme-images/component_inputs.png" width="500px">
+
+      <details>
+      <summary>HTML 코드</summary>
+
+      ```html
+      <div class="input-container">
+        <input class="input" type="email" name="userEmail" id="userEmail" required />
+        <label class="label" for="userEmail">레이블</label>
+        <span class="error-msg">오류 메세지</span>
+      </div>
+      ```
+
+       </details>
+       <details>
+          <summary>CSS 코드</summary>
+
+      ```css
+      .input-container {
+        position: relative;
+      }
+      .input {
+        border: 1px solid var(--gray-200, #c8c8c8);
+        background-color: var(--white, #ffffff);
+        line-height: 1.5;
+        letter-spacing: -0.008px;
+        color: var(--black, #010101);
+        outline: none;
+      }
+      .label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        color: var(--gray-500, #757575);
+        transition: all 0.2s;
+      }
+      .error-msg {
+        display: block;
+        color: var(--red-500, #e50914);
+        padding-left: 20px;
+        font-size: var(--text-small-bold, 1.4rem);
+        visibility: hidden;
+      }
+      /* 레이블 속성 변경 */
+      .input.is--focus + label,
+      .input.is--invalid + label,
+      .input.is--valid + label {
+        color: var(--red-500, #e50914);
+        font-size: var(--text-small-bold, 1.2rem);
+        font-weight: 700;
+      }
+
+      .input.is--invalid ~ .error-msg {
+        visibility: visible;
+      }
+
+      /* 모바일, 태블릿 */
+      @media (max-width: 768px) {
+        /* 모바일,태블릿 기본 인풋 스타일 */
+        .input {
+          width: clamp(245px, 72%, 300px);
+          font-size: var(--text-small, 1.4rem);
+          padding: 10px 50px 10px 20px;
+          border-radius: 30px;
+          box-sizing: border-box;
+        }
+        /* 모바일,태블릿 기본 레이블 스타일  */
+        .label {
+          transform: translate(20px, 10px);
+          font-size: var(--text-smal, 1.4rem);
+        }
+        /* 레이블 포지션 변경 */
+        .input.is--focus + label,
+        .input.is--invalid + label,
+        .input.is--valid + label {
+          transform: translate(20px, -20px);
+        }
+        /* 입력값이 유효하지 않은 경우 붉은 테두리 표현 */
+        .input.is--invalid {
+          border: 2px solid var(--red-500, #e50914);
+          background: url("../../images/svg/warning-icon.svg") no-repeat 95% 50%, var(--white, #ffffff);
+        }
+        /* 입력값이 유효한 경우 초록 테두리 표시 */
+        .input.is--valid {
+          border: 2px solid var(--green-500, #2ede75);
+          background: url("../../images/svg/check-icon.svg") no-repeat 95% 50%, var(--white, #ffffff);
+        }
+        .error-msg {
+          padding-top: 3px;
+          font-size: var(--text-small-bold, 1.2rem);
+          text-align: left;
+        }
+      }
+      /* 데스크탑 */
+      @media (min-width: 768px) {
+        /* 데스크탑 기본 인풋 스타일 */
+        .input {
+          width: 540px;
+          height: 60px;
+          padding: 15px 50px 5px 20px;
+        }
+        /* 데스크탑 기본 레이블 스타일 */
+        .label {
+          transform: translate(20px, 20px);
+          font-size: var(--text-normal, 1.6rem);
+        }
+
+        /* 레이블 포지션 변경 */
+        .input.is--focus + label,
+        .input.is--invalid + label,
+        .input.is--valid + label {
+          transform: translate(20px, 0px);
+        }
+        /* 입력값이 유효하지 않은 경우 붉은 밑줄 표현 */
+        .input.is--invalid {
+          border-bottom: 2px solid var(--red-500);
+          background: url("../../images/svg/warning-icon.svg") no-repeat 95% 50%, var(--white, #ffffff);
+        }
+        /* 입력값이 유효한 경우 초록 테두리 표시 */
+        .input.is--valid {
+          border-bottom: 2px solid var(--green-500, #2ede75);
+          background: url("../../images/svg/check-icon.svg") no-repeat 95% 50%, var(--white, #ffffff);
+        }
+      }
+      ```
+
+      </details>
+
+  4.  **selectbox : 셀렉트박스(드롭다운 메뉴) 컴포넌트**
+
+      <img src="./images/readme-images/component_selectbox.png" width="500px">
+
+      <details>
+         <summary>HTML 코드</summary>
+
+      ```html
+      <div class="default-selectbox-container">
+        <select class="default-selectbox" name="language">
+          <option value="">옵션1</option>
+          <option value="">옵션2</option>
+        </select>
+      </div>
+
+      <div class="custom-selectbox-container">
+        <button class="custom-selectbox select-language">옵션1</button>
+        <ul class="option-list">
+          <li id="first-item" class="option-item is--select"><a href="#">옵션1</a></li>
+          <li id="second-item" class="option-item"><a href="#">옵션2</a></li>
+        </ul>
+      </div>
+      ```
+
+      </details>
+      <details>
+         <summary>CSS 코드</summary>
+
+      ```css
+      .default-selectbox-container,
+      .custom-selectbox-container {
+        position: relative;
+        display: inline-block;
+      }
+      .default-selectbox,
+      .custom-selectbox {
+        padding: 10px 34px;
+      }
+
+      /* 기본 셀렉트 박스 */
+      .default-selectbox {
+        position: relative;
+
+        background: transparent;
+        border: 1px solid var(--gray-500, #757575);
+        border-radius: 2px;
+        appearance: none;
+        color: var(--gray-500, #757575);
+        line-height: 1.2;
+        text-align: center;
+      }
+      .default-selectbox-container::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url("../../images/svg/global.svg") no-repeat 8px 50%;
+        pointer-events: none;
+      }
+
+      .default-selectbox-container::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url("../../images/svg/drop-down.svg") no-repeat 93% 50%;
+        pointer-events: none;
+      }
+
+      /* 커스텀 셀렉트박스(js 사용) */
+      .custom-selectbox {
+        position: relative;
+        background: transparent;
+        border: 1px solid var(--gray-500, #757575);
+        border-radius: 2px;
+        color: var(--gray-500, #757575);
+        line-height: 1.2;
+      }
+      .custom-selectbox::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        /* background: url("../../images/svg/stack.svg#global") no-repeat 8px 50%; */
+        background-image: url("../../images/svg/global.svg");
+        background-repeat: no-repeat;
+        background-position: 8px 50%;
+        background-size: 16px;
+      }
+      .custom-selectbox::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        /* background: url("../../images/svg/drop-down.svg") no-repeat 93% 50%; */
+        background-image: url("../../images/svg/drop-down.svg");
+        background-repeat: no-repeat;
+        background-position: 93% 50%;
+        background-size: 16px;
+      }
+      .option-list {
+        overflow: hidden;
+        border-radius: 12px;
+        opacity: 0.96;
+        background: var(--gray-100, #e3e3e3);
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: -0.008px;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px;
+        position: absolute;
+        top: -5px;
+        left: 5px;
+        display: none;
+      }
+      .option-item {
+        cursor: pointer;
+        user-select: none;
+        padding: 5px;
+      }
+      .option-item a {
+        display: block;
+        padding: 3px;
+      }
+      .option-item a:hover {
+        background-color: var(--gray-200, #c8c8c8);
+      }
+      .default-selectbox:focus,
+      .custom-selectbox:focus {
+        box-shadow: 0 0 0 3px var(--green-500, #757575);
+        outline: none;
+      }
+      /* 선택 체크 표시 상태 */
+      .option-item.is--select a::before {
+        content: "✔ ";
+      }
+      /* 커스텀 드롭다운 메뉴 상태 */
+      .is--active {
+        display: flex;
+      }
+
+      @media (max-width: 768px) {
+        .default-selectbox,
+        .custom-selectbox {
+          padding: 5px 34px;
+        }
+      }
+      ```
+
+      </details>
 
 ### 🔹 2단계 : 컴포넌트 결합
 
 - 독립적인 컴포넌트를 결합하여 복잡성을 증가시키고 새로운 기능을 추가하였습니다.
 - 설명
 
-  1. form : 입력 폼 컴포넌트, [입력 + 버튼] 컴포넌트 결합, 유효성 검사 기능 추가
+  1. **form : 입력 폼 컴포넌트, [입력 + 버튼] 컴포넌트 결합, 유효성 검사 기능 추가**
 
      <img src="./images/readme-images/component_form.png" width="500px">
 
-  2. header : 헤더 컴포넌트, [로고 + 셀렉트박스 + 버튼] 컴포넌트 결합
+  2. **header : 헤더 컴포넌트, [로고 + 셀렉트박스 + 버튼] 컴포넌트 결합**
 
      <img src="./images/readme-images/component_header.png" width="500px">
 
-  3. footer : 푸터 컴포넌트, 내비게이션 요소 + [셀렉트박스] 컴포넌트 결합
+  3. **footer : 푸터 컴포넌트, 내비게이션 요소 + [셀렉트박스] 컴포넌트 결합**
 
      <img src="./images/readme-images/component_footer.png" width="500px">
 
@@ -103,7 +514,7 @@ mission-03
 - 2단계에서 만든 컴포넌트들을 결합하여 기본 템플릿 페이지를 조립하였습니다.
 - 설명
 
-  1. template : [헤더 + 푸터] 컴포넌트 결합, 백그라운드 이미지 추가
+  1. **template : [헤더 + 푸터] 컴포넌트 결합, 백그라운드 이미지 추가**
 
      <img src="./images/readme-images/component_template.png" width="500px">
 
@@ -111,7 +522,7 @@ mission-03
 
 - 3단계에서 만든 템플릿 페이지에 `<main>` 영역을 삽입하여 home 페이지를 조립하였습니다.
 - `<main>` 영역은 재사용할 일이 없어서 따로 컴포넌트로 만들지는 않았습니다.
-- `<main>` 영역 설명
+- **`<main>` 영역 설명**
 
      <img src="./images/readme-images/main.png" width="500px">
 
