@@ -13,7 +13,7 @@
 
 .footer-contact {
   color: var(--gray-200, #c8c8c8);
-  font-size: 2rem;
+  font-size: var(--text-x-large-bold, 2rem);
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: -0.01px;
@@ -24,7 +24,7 @@
 .footer-navigation {
   width: 100%;
   color: var(--gray-300, #acacac);
-  font-size: 1.6rem;
+  font-size: var(--text-normal, 1.6rem);
   line-height: 1.2;
   margin-top: 4px;
 }
@@ -38,7 +38,7 @@
 
 .footer-information-headline {
   color: var(--gray-300, #acacac);
-  font-size: 2.2rem;
+  font-size: var(--title-x-small, 2.2rem);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -63,7 +63,7 @@
   }
 
   .footer-navigation {
-    font-size: 1.4rem;
+    font-size: var(--text-small, 1.4rem);
     line-height: 1.5;
   }
   .footer-navigation-list {
@@ -72,13 +72,13 @@
     row-gap: 10px;
   }
   .footer-information-headline {
-    font-size: 2rem;
+    font-size: var(--text-x-large-bold, 2rem);
     line-height: 1.5;
     letter-spacing: -0.01px;
   }
   .footer-information-list {
     margin-top: 10px;
-    font-size: 1.4rem;
+    font-size: var(--text-small, 1.4rem);
     font-weight: 400;
     letter-spacing: -0.007px;
   }

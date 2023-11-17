@@ -1,5 +1,5 @@
 .register-container {
-  color: var(--white);
+  color: var(--white, #fff);
   padding: 57px 14% 230px;
   display: flex;
   flex-flow: column nowrap;
@@ -8,7 +8,7 @@
 }
 .register-title {
   width: 518px;
-  font-size: 6rem;
+  font-size: var(--big-title-desktop, 6rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.03px;
@@ -17,12 +17,12 @@
 .register-description,
 .register-sub-description,
 .register-alert {
-  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.55);
+  text-shadow: var(--text-shadow-paragraph, 0px 2px 6px rgba(0, 0, 0, 0.55));
   font-weight: 700;
   line-height: 1.5;
 }
 .register-description {
-  font-size: 2rem;
+  font-size: var(--text-x-large-bold, 2rem);
   letter-spacing: -0.01px;
 }
 .register-sub-description {
@@ -36,31 +36,30 @@
 
 @media (max-width: 768px) {
   .register-container {
-    color: var(--white);
     padding: 68px 4.8% 100px;
     row-gap: 24px;
     text-align: center;
   }
   .register-title {
     width: 100%;
-    font-size: 3.4rem;
+    font-size: var(--title-large, 3.4rem);
     word-break: keep-all;
   }
   .register-description {
     width: 259px;
-    font-size: 1.8rem;
+    font-size: var(--text-large, 1.8rem);
     letter-spacing: -0.009px;
   }
   .register-sub-description {
     width: 100%;
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: var(--text-small, 1.4rem);
     letter-spacing: -0.007px;
     text-align: center;
     word-break: keep-all;
   }
   .register-alert {
-    font-size: 1.2rem;
+    font-size: var(--text-x-small, 1.2rem);
     font-weight: 400;
     letter-spacing: -0.006px;
   }

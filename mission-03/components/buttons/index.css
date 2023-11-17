@@ -9,7 +9,7 @@
   display: inline-block;
   background-color: var(--red-500, #e50914);
   border: 0;
-  color: var(--white);
+  color: var(--white, #fff);
   font-weight: 700;
   transition: all 0.3s;
 }
@@ -29,7 +29,7 @@
 
 @media (max-width: 768px) {
   .login-button {
-    font-size: 1.2rem;
+    font-size: var(--text-x-small-bold, 1.2rem);
     line-height: 1.5;
     letter-spacing: -0.006px;
     padding: 0.5em 1.083em;
@@ -38,7 +38,7 @@
   .submit-button {
     width: 160px;
     height: 40px;
-    font-size: 1.4rem;
+    font-size: var(--text-small-bold, 1.4rem);
     line-height: 1.5;
     letter-spacing: -0.007px;
     border-radius: 30px;
@@ -54,7 +54,7 @@
 
 @media (min-width: 768px) {
   .login-button {
-    font-size: 1.6rem;
+    font-size: var(--text-normal-bold, 1.6rem);
     line-height: 1.5;
     letter-spacing: -0.008px;
     padding: 0.5em 0.781em;
@@ -63,7 +63,7 @@
   .submit-button {
     width: 210px;
     height: 60px;
-    font-size: 2.2rem;
+    font-size: var(--title-x-small, 2.2rem);
     line-height: 1.2;
     background-image: url("../../images/svg/arrow-stroke.svg");
     background-repeat: no-repeat;
