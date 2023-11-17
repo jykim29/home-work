@@ -37,10 +37,9 @@ const inputFocusHandler = (e) => {
   e.target.classList.add("is--focus");
 };
 const inputBlurHandler = (e) => {
-  const { value } = e.target;
-  if (value.length > 0) return;
   e.target.classList.remove("is--focus");
 };
+
 const inputHandler = (e) => {
   const { value } = e.target;
   const isValid = emailRegex.test(value);
