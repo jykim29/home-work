@@ -22,15 +22,14 @@
       const emailInput = document.querySelector(".input");
       const emailRegex = new RegExp("^[0-9a-zA-Z]+@[0-9a-zA-Z]+\\.[a-z]{2,}$");
 
-      emailInput.addEventListener("focus", (e) => {
+      const inputFocusHandler = (e) => {
         e.target.classList.add("is--focus");
-      });
-      emailInput.addEventListener("blur", (e) => {
-        const { value } = e.target;
-        if (value.length > 0) return;
+      };
+      const inputBlurHandler = (e) => {
         e.target.classList.remove("is--focus");
-      });
-      emailInput.addEventListener("input", (e) => {
+      };
+
+      const inputHandler = (e) => {
         const { value } = e.target;
         const isValid = emailRegex.test(value);
         if (value.length > 0) {
@@ -45,7 +44,10 @@
           e.target.classList.remove("is--valid");
           e.target.classList.remove("is--invalid");
         }
-      });
+      };
+      emailInput.addEventListener("focus", inputFocusHandler);
+      emailInput.addEventListener("blur", inputBlurHandler);
+      emailInput.addEventListener("input", inputHandler);
     </script>
   </body>
 </html>
